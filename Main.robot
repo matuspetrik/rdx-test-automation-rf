@@ -21,21 +21,22 @@ Test teardown                   Sleep   ${SLEEP}
 *** Variables ***
 ${BROWSER}                      chrome
 ${ESHOP_URL}                    http://focus.sk
-${DISCLAIMER}                   //button[@class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"]
 ${SLEEP}                        2
 
 *** Keywords ***
 Get rid of GDPR disclaimer
-    Click element               ${DISCLAIMER}       # click to get rid of cookies disclaimer
+    ${disclaimer}               Set variable
+    ...                             //button[@class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"]
+    Click element               ${disclaimer}       # click to get rid of cookies disclaimer
 
 Navigate to category "${category}" "${subcategory}"
     [Documentation]             Navigate to the desired category.
     ...                         In this case: notebooks/notebooks-14-lcd
 
-    ${ELM_L0_XPATH}             Set variable    //a[@href="/${category}"]
-    ${ELM_L1_XPATH}             Set variable    //a[@href="/${subcategory}"]
-    Click element               ${ELM_L0_XPATH}     # open menu level 0 item
-    Click element               ${ELM_L1_XPATH}     # open menu level 1 item
+    ${elm_l0_xpath}             Set variable    //a[@href="/${category}"]
+    ${elm_l1_xpath}             Set variable    //a[@href="/${subcategory}"]
+    Click element               ${elm_l0_xpath}     # open menu level 0 item
+    Click element               ${elm_l1_xpath}     # open menu level 1 item
 
 Sort by "${val:(most|least)}" expensive
     [Documentation]             Sort by either most or least expensive item.
