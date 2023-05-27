@@ -1,0 +1,127 @@
+==============================================================================
+20230527 15:15:57.835 - INFO - + START SUITE: Main [ ]
+==============================================================================
+20230527 15:15:57.835 - INFO - +- START SETUP: BuiltIn.Run Keywords [ Open Browser | url=${ESHOP_URL} | browser=${BROWSER} | AND | No operation | AND | Maximize Browser Window ]
+20230527 15:15:57.836 - INFO - +-- START KEYWORD: SeleniumLibrary.Open Browser [ url=${ESHOP_URL} | browser=${BROWSER} ]
+20230527 15:15:57.836 - INFO - Opening browser 'chrome' to base url 'http://focus.sk'.
+20230527 15:15:57.837 - INFO - Applicable driver not found; attempting to install with Selenium Manager (Beta)
+20230527 15:15:59.996 - DEBUG - Opened browser with session id 489d29007dc7a8bc17f06bba5959a3f7.
+20230527 15:15:59.997 - INFO - +-- END KEYWORD: SeleniumLibrary.Open Browser (2160)
+20230527 15:15:59.997 - INFO - +-- START KEYWORD: BuiltIn.No Operation [ ]
+20230527 15:15:59.997 - INFO - +-- END KEYWORD: BuiltIn.No Operation (0)
+20230527 15:15:59.997 - INFO - +-- START KEYWORD: SeleniumLibrary.Maximize Browser Window [ ]
+20230527 15:16:00.102 - INFO - +-- END KEYWORD: SeleniumLibrary.Maximize Browser Window (105)
+20230527 15:16:00.102 - INFO - +- END SETUP: BuiltIn.Run Keywords (2267)
+------------------------------------------------------------------------------
+20230527 15:16:00.102 - INFO - +- START TEST: Fill the shopping cart [ ]
+------------------------------------------------------------------------------
+20230527 15:16:00.103 - INFO - +-- START KEYWORD: Get rid of GDPR disclaimer [ ]
+20230527 15:16:00.104 - INFO - +--- START KEYWORD: SeleniumLibrary.Click Element [ ${DISCLAIMER} ]
+20230527 15:16:00.105 - INFO - Clicking element '//button[@class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"]'.
+20230527 15:16:00.207 - INFO - +--- END KEYWORD: SeleniumLibrary.Click Element (103)
+20230527 15:16:00.207 - INFO - +-- END KEYWORD: Get rid of GDPR disclaimer (104)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20230527 15:16:00.207 - INFO - +-- START KEYWORD: Navigate to category "notebooky" "notebooky-14-lcd" [ ]
+20230527 15:16:00.208 - INFO - +--- START KEYWORD: BuiltIn.Set Variable [ //a[@href="/${category}"] ]
+20230527 15:16:00.208 - INFO - ${ELM_L0_XPATH} = //a[@href="/notebooky"]
+20230527 15:16:00.208 - INFO - +--- END KEYWORD: BuiltIn.Set Variable (0)
+20230527 15:16:00.208 - INFO - +--- START KEYWORD: BuiltIn.Set Variable [ //a[@href="/${subcategory}"] ]
+20230527 15:16:00.208 - INFO - ${ELM_L1_XPATH} = //a[@href="/notebooky-14-lcd"]
+20230527 15:16:00.208 - INFO - +--- END KEYWORD: BuiltIn.Set Variable (0)
+20230527 15:16:00.208 - INFO - +--- START KEYWORD: SeleniumLibrary.Click Element [ ${ELM_L0_XPATH} ]
+20230527 15:16:00.209 - INFO - Clicking element '//a[@href="/notebooky"]'.
+20230527 15:16:01.624 - INFO - +--- END KEYWORD: SeleniumLibrary.Click Element (1416)
+20230527 15:16:01.624 - INFO - +--- START KEYWORD: SeleniumLibrary.Click Element [ ${ELM_L1_XPATH} ]
+20230527 15:16:01.625 - INFO - Clicking element '//a[@href="/notebooky-14-lcd"]'.
+20230527 15:16:02.627 - INFO - +--- END KEYWORD: SeleniumLibrary.Click Element (1003)
+20230527 15:16:02.627 - INFO - +-- END KEYWORD: Navigate to category "notebooky" "notebooky-14-lcd" (2420)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20230527 15:16:02.627 - INFO - +-- START KEYWORD: Sort by "most" expensive [ ]
+20230527 15:16:02.628 - INFO - +--- START KEYWORD: BuiltIn.Set Variable [ //div[@id="sortOptionsDropDown"]/div[@class="toplevel"] ]
+20230527 15:16:02.628 - INFO - ${sort_xpath} = //div[@id="sortOptionsDropDown"]/div[@class="toplevel"]
+20230527 15:16:02.628 - INFO - +--- END KEYWORD: BuiltIn.Set Variable (0)
+20230527 15:16:02.628 - INFO - +--- START KEYWORD: SeleniumLibrary.Click Element [ ${sort_xpath} ]
+20230527 15:16:02.629 - INFO - Clicking element '//div[@id="sortOptionsDropDown"]/div[@class="toplevel"]'.
+20230527 15:16:02.680 - INFO - +--- END KEYWORD: SeleniumLibrary.Click Element (52)
+20230527 15:16:02.680 - INFO - +--- START KEYWORD: BuiltIn.Set Variable If [ "${val}" == "most" | xpath://ul[@class="sublevel"]/li/span[@data-dropdownoptionvalue="11"] | xpath://ul[@class="sublevel"]/li/span[@data-dropdownoptionvalue="10"] ]
+20230527 15:16:02.681 - INFO - ${element} = xpath://ul[@class="sublevel"]/li/span[@data-dropdownoptionvalue="11"]
+20230527 15:16:02.681 - INFO - +--- END KEYWORD: BuiltIn.Set Variable If (1)
+20230527 15:16:02.681 - INFO - +--- START KEYWORD: SeleniumLibrary.Click Element [ ${element} ]
+20230527 15:16:02.682 - INFO - Clicking element 'xpath://ul[@class="sublevel"]/li/span[@data-dropdownoptionvalue="11"]'.
+20230527 15:16:02.750 - INFO - +--- END KEYWORD: SeleniumLibrary.Click Element (69)
+20230527 15:16:02.750 - INFO - +--- START KEYWORD: BuiltIn.Sleep [ ${SLEEP} ]
+20230527 15:16:04.751 - INFO - Slept 2 seconds
+20230527 15:16:04.751 - INFO - +--- END KEYWORD: BuiltIn.Sleep (2001)
+20230527 15:16:04.751 - INFO - +-- END KEYWORD: Sort by "most" expensive (2124)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20230527 15:16:04.752 - INFO - +-- START KEYWORD: Add first "2" items to cart [ ]
+20230527 15:16:04.752 - INFO - +--- START KEYWORD: SeleniumLibrary.Get WebElements [ xpath://div[@class="item-grid"]/div/div/div/div/div/div[@class="buttons"] ]
+20230527 15:16:04.791 - INFO - @{elmts} = [ <selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_222")> | <selenium.webdriver.remote.webelement.WebElem...
+20230527 15:16:04.791 - INFO - +--- END KEYWORD: SeleniumLibrary.Get WebElements (39)
+20230527 15:16:04.791 - INFO - +--- START FOR: ${row} | ${elm} IN ENUMERATE [ @{elmts} ] [ ]
+20230527 15:16:04.792 - INFO - +---- START ITERATION: ${row} = 0, ${elm} = <selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_222")> [ ]
+20230527 15:16:04.792 - INFO - +----- START KEYWORD: BuiltIn.Set Variable [ ${${row} + 1} ]
+20230527 15:16:04.794 - INFO - ${row_h} = 1
+20230527 15:16:04.794 - INFO - +----- END KEYWORD: BuiltIn.Set Variable (2)
+20230527 15:16:04.794 - INFO - +----- START KEYWORD: SeleniumLibrary.Click Element [ ${elm} ]
+20230527 15:16:04.795 - INFO - Clicking element '<selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_222")>'.
+20230527 15:16:04.943 - INFO - +----- END KEYWORD: SeleniumLibrary.Click Element (149)
+20230527 15:16:04.943 - INFO - +----- START KEYWORD: BuiltIn.Sleep [ ${SLEEP} ]
+20230527 15:16:06.948 - INFO - Slept 2 seconds
+20230527 15:16:06.948 - INFO - +----- END KEYWORD: BuiltIn.Sleep (2005)
+20230527 15:16:06.948 - INFO - +----- START KEYWORD: SeleniumLibrary.Click Element [ xpath://a[@class="continueShoppingLink"] ]
+20230527 15:16:06.949 - INFO - Clicking element 'xpath://a[@class="continueShoppingLink"]'.
+20230527 15:16:07.053 - INFO - +----- END KEYWORD: SeleniumLibrary.Click Element (105)
+20230527 15:16:07.054 - INFO - +----- START KEYWORD: SeleniumLibrary.Get WebElements [ ${elm} ]
+20230527 15:16:07.055 - INFO - ${elm_item} = <selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_222")>
+20230527 15:16:07.055 - INFO - +----- END KEYWORD: SeleniumLibrary.Get WebElements (1)
+20230527 15:16:07.055 - INFO - +----- START KEYWORD: BuiltIn.Exit For Loop If [ ${row_h} == ${number_of} ]
+20230527 15:16:07.056 - INFO - +----- END KEYWORD: BuiltIn.Exit For Loop If (1)
+20230527 15:16:07.056 - INFO - +---- END ITERATION: ${row} = 0, ${elm} = <selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_222")> (2264)
+20230527 15:16:07.056 - INFO - +---- START ITERATION: ${row} = 1, ${elm} = <selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_223")> [ ]
+20230527 15:16:07.057 - INFO - +----- START KEYWORD: BuiltIn.Set Variable [ ${${row} + 1} ]
+20230527 15:16:07.058 - INFO - ${row_h} = 2
+20230527 15:16:07.058 - INFO - +----- END KEYWORD: BuiltIn.Set Variable (1)
+20230527 15:16:07.058 - INFO - +----- START KEYWORD: SeleniumLibrary.Click Element [ ${elm} ]
+20230527 15:16:07.059 - INFO - Clicking element '<selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_223")>'.
+20230527 15:16:07.186 - INFO - +----- END KEYWORD: SeleniumLibrary.Click Element (128)
+20230527 15:16:07.187 - INFO - +----- START KEYWORD: BuiltIn.Sleep [ ${SLEEP} ]
+20230527 15:16:09.188 - INFO - Slept 2 seconds
+20230527 15:16:09.188 - INFO - +----- END KEYWORD: BuiltIn.Sleep (2002)
+20230527 15:16:09.188 - INFO - +----- START KEYWORD: SeleniumLibrary.Click Element [ xpath://a[@class="continueShoppingLink"] ]
+20230527 15:16:09.189 - INFO - Clicking element 'xpath://a[@class="continueShoppingLink"]'.
+20230527 15:16:09.269 - INFO - +----- END KEYWORD: SeleniumLibrary.Click Element (81)
+20230527 15:16:09.269 - INFO - +----- START KEYWORD: SeleniumLibrary.Get WebElements [ ${elm} ]
+20230527 15:16:09.270 - INFO - ${elm_item} = <selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_223")>
+20230527 15:16:09.270 - INFO - +----- END KEYWORD: SeleniumLibrary.Get WebElements (1)
+20230527 15:16:09.270 - INFO - +----- START KEYWORD: BuiltIn.Exit For Loop If [ ${row_h} == ${number_of} ]
+20230527 15:16:09.270 - INFO - Exiting for loop altogether.
+20230527 15:16:09.270 - INFO - +----- END KEYWORD: BuiltIn.Exit For Loop If (0)
+20230527 15:16:09.271 - INFO - +---- END ITERATION: ${row} = 1, ${elm} = <selenium.webdriver.remote.webelement.WebElement (session="489d29007dc7a8bc17f06bba5959a3f7", element="3A82F8C16B683F80D07E3E2B4CEEF096_element_223")> (2214)
+20230527 15:16:09.271 - INFO - +--- END FOR: ${row} | ${elm} IN ENUMERATE [ @{elmts} ] (4480)
+20230527 15:16:09.271 - INFO - +-- END KEYWORD: Add first "2" items to cart (4519)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20230527 15:16:09.271 - INFO - +-- START KEYWORD: Display shopping cart for "10" "seconds" [ ]
+20230527 15:16:09.271 - INFO - +--- START KEYWORD: BuiltIn.Set Variable [ //div[@class="block-mini-cart"]/strong//a[@href="/cart"] ]
+20230527 15:16:09.272 - INFO - ${shopping_cart} = //div[@class="block-mini-cart"]/strong//a[@href="/cart"]
+20230527 15:16:09.272 - INFO - +--- END KEYWORD: BuiltIn.Set Variable (1)
+20230527 15:16:09.272 - INFO - +--- START KEYWORD: SeleniumLibrary.Click Element [ ${shopping_cart} ]
+20230527 15:16:09.272 - INFO - Clicking element '//div[@class="block-mini-cart"]/strong//a[@href="/cart"]'.
+20230527 15:16:09.738 - INFO - +--- END KEYWORD: SeleniumLibrary.Click Element (466)
+20230527 15:16:09.739 - INFO - +--- START KEYWORD: BuiltIn.Sleep [ ${number_of} ${time_unit} ]
+20230527 15:16:19.739 - INFO - Slept 10 seconds
+20230527 15:16:19.740 - INFO - +--- END KEYWORD: BuiltIn.Sleep (10001)
+20230527 15:16:19.740 - INFO - +-- END KEYWORD: Display shopping cart for "10" "seconds" (10469)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20230527 15:16:19.741 - INFO - +-- START TEARDOWN: BuiltIn.Sleep [ ${SLEEP} ]
+20230527 15:16:21.741 - INFO - Slept 2 seconds
+20230527 15:16:21.741 - INFO - +-- END TEARDOWN: BuiltIn.Sleep (2000)
+------------------------------------------------------------------------------
+20230527 15:16:21.742 - INFO - +- END TEST: Fill the shopping cart (21639)
+------------------------------------------------------------------------------
+20230527 15:16:21.742 - INFO - +- START TEARDOWN: SeleniumLibrary.Close Browser [ ]
+20230527 15:16:21.742 - DEBUG - Closing browser with session id 489d29007dc7a8bc17f06bba5959a3f7.
+20230527 15:16:21.799 - INFO - +- END TEARDOWN: SeleniumLibrary.Close Browser (57)
+==============================================================================
+20230527 15:16:21.801 - INFO - + END SUITE: Main (24060)
+==============================================================================
