@@ -2,3 +2,4 @@ output/html/*
 output/*
 venv/
 .vscode/
+Files/chrome*
