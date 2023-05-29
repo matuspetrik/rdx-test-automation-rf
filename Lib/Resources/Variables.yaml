@@ -1,0 +1,13 @@
+# This file stores variables definition in Yaml format
+
+BROWSER: chrome
+ESHOP_URL: http://focus.sk
+TIMEOUT: 2
+disclaimer: //button[@class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"]
+sort_xpath: //div[@id="sortOptionsDropDown"]/div[@class="toplevel"]
+buy_button: //input[@type="button"][@value="Kúpiť"]
+most_expensive: xpath://ul[@class="sublevel"]/li/span[@data-dropdownoptionvalue="11"]
+least_expensive: xpath://ul[@class="sublevel"]/li/span[@data-dropdownoptionvalue="10"]
+buy_items: xpath://div[@class="item-grid"]/div/div/div/div/div/div[@class="buttons"]
+elm_contshop: xpath://a[@class="continueShoppingLink"]
+shopping_cart: //div[@class="block-mini-cart"]/strong//a[@href="/cart"]

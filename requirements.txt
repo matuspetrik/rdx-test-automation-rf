@@ -6,6 +6,7 @@ h11==0.14.0
 idna==3.4
 outcome==1.2.0
 PySocks==1.7.1
+PyYAML==6.0
 robotframework==6.0.2
 robotframework-pythonlibcore==4.1.2
 robotframework-seleniumlibrary==6.1.0
